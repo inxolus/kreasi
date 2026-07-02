@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 33% 98%;
+    --foreground: 200 8% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 200 8% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 8% 10%;
+    --primary: 222 67% 31%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 42 95% 57%;
+    --secondary-foreground: 222 67% 31%;
+    --muted: 210 33% 96%;
+    --muted-foreground: 233 7% 49%;
+    --accent: 42 95% 57%;
+    --accent-foreground: 222 67% 31%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 42 95% 57%;
+    --radius: 0.25rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 222 67% 31%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 42 95% 57%;
+  }
+
+  body {
+    @apply bg-brand-light-gray text-brand-text-primary font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .container-main {
+    @apply max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent;
+  }
+
+  .bg-hex-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 5 L35 12.5 L35 27.5 L20 35 L5 27.5 L5 12.5 Z' stroke='%231A3694' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 40px 40px;
+  }
+
+  .overlay-gradient {
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.85) 100%);
+  }
+
+  .overlay-gradient-dark {
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.80) 0%, rgba(15, 23, 42, 0.92) 100%);
+  }
+
+  .label-caps {
+    @apply text-xs font-bold uppercase tracking-[0.05em] font-body;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
